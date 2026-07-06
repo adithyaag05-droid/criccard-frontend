@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #FFD700;
+  --gold-dim: #b8a000;
+  --bg: #0d0d1a;
+  --card-bg: #1a1a2e;
+  --card-border: #2a2a4a;
+  --text: #ffffff;
+  --text-muted: #8888aa;
+  --neon: #00ff88;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #0d0d1a;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+.btn-gold:hover { transform: translateY(-1px); box-shadow: 0 4px 20px #FFD70066; }
+.btn-gold:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  font-weight: 600;
+  border: 1.5px solid var(--gold);
+  border-radius: 8px;
+  padding: 11px 24px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--gold); color: #0d0d1a; }
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.input {
+  background: #111128;
+  border: 1.5px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 12px 14px;
+  font-size: 15px;
+  width: 100%;
+  transition: border 0.2s;
+}
+.input:focus { outline: none; border-color: var(--gold); }
+.input::placeholder { color: var(--text-muted); }
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.gold-text { color: var(--gold); }
+.muted { color: var(--text-muted); }
+
+/* Sport selector */
+.sport-btn {
+  border: 1.5px solid var(--card-border);
+  background: #111128;
+  color: var(--text-muted);
+  border-radius: 10px;
+  padding: 14px 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 13px;
+  font-weight: 600;
+}
+.sport-btn:hover, .sport-btn.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: #1a1a2e;
+}
+
+/* Theme selector */
+.theme-btn {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 4px;
+  transition: all 0.2s;
+}
+.theme-btn.active { border-color: var(--gold); }
+
+/* Progress steps */
+.step-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--card-border);
+  transition: all 0.3s;
+}
+.step-dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+.step-dot.done { background: var(--neon); }
